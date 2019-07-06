@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-yarn add react-to-vue
+yarn add @egoist/react-to-vue
 ```
 
 ## Usage
