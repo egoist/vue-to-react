@@ -1,31 +1,43 @@
-# react-to-vue
+# vue-to-react
 
-[![NPM version](https://badgen.net/npm/v/@egoist/react-to-vue)](https://npmjs.com/package/@egoist/react-to-vue) [![NPM downloads](https://badgen.net/npm/dm/@egoist/react-to-vue)](https://npmjs.com/package/@egoist/react-to-vue) [![CircleCI](https://badgen.net/circleci/github/egoist/react-to-vue/master)](https://circleci.com/gh/egoist/react-to-vue/tree/master) [![donate](https://badgen.net/badge/support%20me/donate/ff69b4)](https://patreon.com/egoist) [![chat](https://badgen.net/badge/chat%20on/discord/7289DA)](https://chat.egoist.moe)
+[![NPM version](https://badgen.net/npm/v/@egoist/vue-to-react)](https://npmjs.com/package/@egoist/vue-to-react) [![NPM downloads](https://badgen.net/npm/dm/@egoist/vue-to-react)](https://npmjs.com/package/@egoist/vue-to-react) [![CircleCI](https://badgen.net/circleci/github/egoist/vue-to-react/master)](https://circleci.com/gh/egoist/vue-to-react/tree/master) [![donate](https://badgen.net/badge/support%20me/donate/ff69b4)](https://patreon.com/egoist) [![chat](https://badgen.net/badge/chat%20on/discord/7289DA)](https://chat.egoist.moe)
 
 ## Install
 
 ```bash
-yarn add @egoist/react-to-vue
+yarn add @egoist/vue-to-react
 ```
 
 ## Usage
 
 ```js
-import Vue from 'vue'
 import React from 'react'
-import toVue from '@egoist/react-to-vue'
+import { render } from 'react-dom'
+import toReact from '@egoist/vue-to-react'
 
-const ReactComponent = () => {
-  const [count, setCount] = React.useState(0)
-  return <button onClick={() => setCount(count + 1)}>{count}</button>
+const VueComponent = {
+  data() {
+    return {
+      count: 0
+    }
+  },
+
+  render(h) {
+    return h(
+      'button',
+      {
+        on: {
+          click: () => this.count++
+        }
+      },
+      [this.count]
+    )
+  }
 }
 
-const VueComponent = toVue(ReactComponent)
+const ReactComponent = toReact(VueComponent)
 
-new Vue({
-  el: '#app',
-  render: h => h(VueComponent)
-})
+render(<ReactComponent />, document.getElementById('app'))
 ```
 
 ## Contributing
@@ -38,7 +50,7 @@ new Vue({
 
 ## Author
 
-**@egoist/react-to-vue** © [EGOIST](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
-Authored and maintained by EGOIST with help from contributors ([list](https://github.com/egoist/react-to-vue/contributors)).
+**@egoist/vue-to-react** © [EGOIST](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by EGOIST with help from contributors ([list](https://github.com/egoist/vue-to-react/contributors)).
 
 > [github.com/egoist](https://github.com/egoist) · GitHub [@EGOIST](https://github.com/egoist) · Twitter [@\_egoistlily](https://twitter.com/_egoistlily)

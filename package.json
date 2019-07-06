@@ -1,7 +1,7 @@
 {
-  "name": "@egoist/react-to-vue",
+  "name": "@egoist/vue-to-react",
   "version": "0.0.0",
-  "description": "Turn a React component into a Vue component.",
+  "description": "Turn a Vue component into a React component.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [
@@ -17,7 +17,7 @@
     "access": "public"
   },
   "repository": {
-    "url": "egoist/react-to-vue",
+    "url": "egoist/vue-to-react",
     "type": "git"
   },
   "author": "egoist<0x142857@gmail.com>",
@@ -27,6 +27,7 @@
     "eslint-config-prettier": "^3.3.0",
     "eslint-config-rem": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.14.2",
     "husky": "^1.0.0-rc.13",
     "lint-staged": "^7.2.0",
     "poi": "^12.7.0",
@@ -39,8 +40,15 @@
   "xo": {
     "extends": [
       "rem",
+      "plugin:react/recommended",
       "plugin:prettier/recommended"
-    ]
+    ],
+    "envs": [
+      "browser"
+    ],
+    "rules": {
+      "react/display-name": "off"
+    }
   },
   "husky": {
     "hooks": {
@@ -59,6 +67,6 @@
   },
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "vue": "^2.6.10"
   }
 }

@@ -1,18 +1,19 @@
 import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
+import Vue from 'vue'
 
 export default Component => {
-  return {
-    mounted() {
-      render(React.createElement(Component, null), this.$el)
-    },
+  return () => {
+    const el = React.useRef(null)
 
-    beforeDestroy() {
-      unmountComponentAtNode(this.$el)
-    },
+    React.useEffect(() => {
+      const app = new Vue({
+        el: el.current,
+        render: h => h(Component)
+      })
 
-    render(h) {
-      return h('div')
-    }
+      return () => app.$destroy()
+    })
+
+    return React.createElement('div', { ref: el })
   }
 }

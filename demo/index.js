@@ -1,25 +1,27 @@
-import Vue from 'vue'
 import React from 'react'
-import toVue from '../src'
+import { render } from 'react-dom'
+import toReact from '../src'
 
-const App = toVue(() => {
-  const [count, setCount] = React.useState(0)
-
-  React.useEffect(() => {
-    return () => {
-      console.log('Goodbye!')
+const App = toReact({
+  data() {
+    return {
+      count: 0
     }
-  })
+  },
 
-  return (
-    <div className="app">
-      <button onClick={() => setCount(count + 1)}>{count}</button>
-      <button onClick={() => app.$destroy()}>Destroy</button>
-    </div>
-  )
+  render(h) {
+    return h(
+      'button',
+      {
+        on: {
+          click: () => {
+            this.count++
+          }
+        }
+      },
+      [this.count]
+    )
+  }
 })
-
-const app = new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+console.log(App)
+render(<App />, document.getElementById('app'))
