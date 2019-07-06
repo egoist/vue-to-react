@@ -1,0 +1,61 @@
+{
+  "name": "react2vue",
+  "version": "0.0.0",
+  "description": "Turn a React component into a Vue component.",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "npm run lint",
+    "build": "bili src/index.js --format esm --format cjs",
+    "prepublishOnly": "npm run build",
+    "lint": "xo"
+  },
+  "repository": {
+    "url": "egoist/react2vue",
+    "type": "git"
+  },
+  "author": "egoist<0x142857@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "bili": "^4.8.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-rem": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.0.0-rc.13",
+    "lint-staged": "^7.2.0",
+    "poi": "^12.7.0",
+    "prettier": "^1.15.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "vue": "^2.6.10",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "extends": [
+      "rem",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
