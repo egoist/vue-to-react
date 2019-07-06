@@ -1,11 +1,11 @@
-# react2vue
+# react-to-vue
 
-[![NPM version](https://badgen.net/npm/v/react2vue)](https://npmjs.com/package/react2vue) [![NPM downloads](https://badgen.net/npm/dm/react2vue)](https://npmjs.com/package/react2vue) [![CircleCI](https://badgen.net/circleci/github/egoist/react2vue/master)](https://circleci.com/gh/egoist/react2vue/tree/master) [![donate](https://badgen.net/badge/support%20me/donate/ff69b4)](https://patreon.com/egoist) [![chat](https://badgen.net/badge/chat%20on/discord/7289DA)](https://chat.egoist.moe)
+[![NPM version](https://badgen.net/npm/v/@egoist/react-to-vue)](https://npmjs.com/package/@egoist/react-to-vue) [![NPM downloads](https://badgen.net/npm/dm/@egoist/react-to-vue)](https://npmjs.com/package/@egoist/react-to-vue) [![CircleCI](https://badgen.net/circleci/github/egoist/react-to-vue/master)](https://circleci.com/gh/egoist/react-to-vue/tree/master) [![donate](https://badgen.net/badge/support%20me/donate/ff69b4)](https://patreon.com/egoist) [![chat](https://badgen.net/badge/chat%20on/discord/7289DA)](https://chat.egoist.moe)
 
 ## Install
 
 ```bash
-yarn add react2vue
+yarn add react-to-vue
 ```
 
 ## Usage
@@ -13,14 +13,14 @@ yarn add react2vue
 ```js
 import Vue from 'vue'
 import React from 'react'
-import react2vue from 'react2vue'
+import toVue from '@egoist/react-to-vue'
 
 const ReactComponent = () => {
   const [count, setCount] = React.useState(0)
   return <button onClick={() => setCount(count + 1)}>{count}</button>
 }
 
-const VueComponent = react2vue(ReactComponent)
+const VueComponent = toVue(ReactComponent)
 
 new Vue({
   el: '#app',
@@ -38,7 +38,7 @@ new Vue({
 
 ## Author
 
-**react2vue** © [EGOIST](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
-Authored and maintained by EGOIST with help from contributors ([list](https://github.com/egoist/react2vue/contributors)).
+**@egoist/react-to-vue** © [EGOIST](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by EGOIST with help from contributors ([list](https://github.com/egoist/react-to-vue/contributors)).
 
 > [github.com/egoist](https://github.com/egoist) · GitHub [@EGOIST](https://github.com/egoist) · Twitter [@\_egoistlily](https://twitter.com/_egoistlily)

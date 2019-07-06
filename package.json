@@ -1,5 +1,5 @@
 {
-  "name": "react2vue",
+  "name": "@egoist/react-to-vue",
   "version": "0.0.0",
   "description": "Turn a React component into a Vue component.",
   "main": "dist/index.js",
@@ -13,8 +13,11 @@
     "prepublishOnly": "npm run build",
     "lint": "xo"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
-    "url": "egoist/react2vue",
+    "url": "egoist/react-to-vue",
     "type": "git"
   },
   "author": "egoist<0x142857@gmail.com>",

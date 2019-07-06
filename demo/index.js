@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import React from 'react'
-import react2vue from '../src'
+import toVue from '../src'
 
-const App = react2vue(() => {
+const App = toVue(() => {
   const [count, setCount] = React.useState(0)
 
   React.useEffect(() => {
