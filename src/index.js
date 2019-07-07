@@ -1,14 +1,16 @@
 import React from 'react'
 import Vue from 'vue'
 
-export default Component => {
-  return () => {
+const defaultPassProps = props => props
+
+export default (Component, { passProps = defaultPassProps } = {}) => {
+  return props => {
     const el = React.useRef(null)
 
     React.useEffect(() => {
       const app = new Vue({
         el: el.current,
-        render: h => h(Component)
+        render: h => h(Component, { props: passProps ? passProps(props) : {} })
       })
 
       return () => app.$destroy()

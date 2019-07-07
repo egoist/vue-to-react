@@ -40,6 +40,32 @@ const ReactComponent = toReact(VueComponent)
 render(<ReactComponent />, document.getElementById('app'))
 ```
 
+### Passing Props
+
+By default we pass all props from React to Vue:
+
+```js
+const Counter = toReact({
+  props: ['initialCount'],
+  render(h) {
+    return h('button', {}, [this.initialCount])
+  }
+})
+
+const App = <Counter initialCount={0} />
+```
+
+However you can customize how the props are passed to Vue with the `passProps` option:
+
+```js
+toReact(VueComponent, {
+  // Only pass `initialProps` prop
+  passProps: props => ({ initialCount: props.initialProps }),
+  // Or disable props
+  passProps: false
+})
+```
+
 ## Contributing
 
 1. Fork it!
