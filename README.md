@@ -59,8 +59,8 @@ However you can customize how the props are passed to Vue with the `passProps` o
 
 ```js
 toReact(VueComponent, {
-  // Only pass `initialProps` prop
-  passProps: props => ({ initialCount: props.initialProps }),
+  // Only pass `initialCount` prop
+  passProps: props => ({ initialCount: props.initialCount }),
   // Or disable props
   passProps: false
 })
