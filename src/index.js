@@ -14,6 +14,10 @@ export default Component => {
       return () => app.$destroy()
     })
 
-    return React.createElement('div', { ref: el })
+    return React.createElement(
+      'div',
+      null,
+      React.createElement('div', { ref: el })
+    )
   }
 }
