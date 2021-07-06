@@ -1,6 +1,8 @@
 # vue-to-react
 
-[![NPM version](https://badgen.net/npm/v/@egoist/vue-to-react)](https://npmjs.com/package/@egoist/vue-to-react) [![NPM downloads](https://badgen.net/npm/dm/@egoist/vue-to-react)](https://npmjs.com/package/@egoist/vue-to-react) [![CircleCI](https://badgen.net/circleci/github/egoist/vue-to-react/master)](https://circleci.com/gh/egoist/vue-to-react/tree/master) [![donate](https://badgen.net/badge/support%20me/donate/ff69b4)](https://patreon.com/egoist) [![chat](https://badgen.net/badge/chat%20on/discord/7289DA)](https://chat.egoist.moe)
+[![NPM version](https://badgen.net/npm/v/@egoist/vue-to-react)](https://npmjs.com/package/@egoist/vue-to-react) [![NPM downloads](https://badgen.net/npm/dm/@egoist/vue-to-react)](https://npmjs.com/package/@egoist/vue-to-react) [![CircleCI](https://badgen.net/circleci/github/egoist/vue-to-react/master)](https://circleci.com/gh/egoist/vue-to-react/tree/master) [![donate](https://badgen.net/badge/support%20me/donate/ff69b4)](https://github.com/sponsors/egoist)
+
+This works for both Vue 2 and Vue 3.
 
 ## Install
 

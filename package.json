@@ -3,15 +3,14 @@
   "version": "0.0.0",
   "description": "Turn a Vue component into a React component.",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.mjs",
   "files": [
     "dist"
   ],
   "scripts": {
-    "test": "npm run lint",
-    "build": "bili src/index.js --format esm --format cjs",
-    "prepublishOnly": "npm run build",
-    "lint": "xo"
+    "test": "echo lol",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "publishConfig": {
     "access": "public"
@@ -23,50 +22,20 @@
   "author": "egoist<0x142857@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "bili": "^4.8.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-config-rem": "^4.0.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-react": "^7.14.2",
-    "husky": "^1.0.0-rc.13",
-    "lint-staged": "^7.2.0",
-    "poi": "^12.7.0",
+    "@types/react": "^17.0.13",
+    "esbuild": "^0.12.15",
     "prettier": "^1.15.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "vue": "^2.6.10",
-    "xo": "^0.23.0"
-  },
-  "xo": {
-    "extends": [
-      "rem",
-      "plugin:react/recommended",
-      "plugin:prettier/recommended"
-    ],
-    "envs": [
-      "browser"
-    ],
-    "rules": {
-      "react/display-name": "off"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "xo --fix",
-      "git add"
-    ],
-    "*.{json,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "rollup": "^2.52.7",
+    "rollup-plugin-dts": "^3.0.2",
+    "rollup-plugin-esbuild": "^4.5.0",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.0",
+    "vue": "^2.6.10"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "vue": "^2.6.10"
+    "react": "^16.8.6 || ^17",
+    "vue": "^2.6.10 || ^3.0.0"
   }
 }
