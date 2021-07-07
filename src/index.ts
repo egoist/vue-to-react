@@ -7,8 +7,8 @@ export default <TProps = any>(
   Component: any,
   { passProps = defaultPassProps } = {}
 ) => {
-  return (props: TProps) => {
-    const el = React.useRef(null)
+  return React.memo((props: TProps) => {
+    const el = React.useRef<HTMLDivElement>(null)
 
     React.useEffect(() => {
       // @ts-expect-error
@@ -23,20 +23,19 @@ export default <TProps = any>(
         return () => app.unmount()
       } else if (Vue.default) {
         const app = new Vue.default({
-          // @ts-expect-error
-          el: el.current,
+          el: el.current!,
           render: h =>
             h(Component, { props: passProps ? passProps(props) : {} })
         })
 
         return () => app.$destroy()
       }
-    })
+    }, [])
 
     return React.createElement(
       'div',
       null,
       React.createElement('div', { ref: el })
     )
-  }
+  })
 }
