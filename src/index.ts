@@ -30,7 +30,7 @@ export default <TProps = any>(
 
         return () => app.$destroy()
       }
-    }, [])
+    })
 
     return React.createElement(
       'div',
