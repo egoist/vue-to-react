@@ -12,15 +12,14 @@ export default <TProps = any>(
 
     React.useEffect(() => {
       // @ts-expect-error
-      if (Vue.createApp) {
+      if (Vue.createVNode) {
         // @ts-expect-error
-        const app = Vue.createApp({
-          // @ts-expect-error
-          render: () => Vue.h(Component, (passProps && passProps(props)) || {})
-        })
-        app.mount(el.current)
+        const vm = Vue.createVNode(Component, (passProps && passProps(props)) || {})
+        // @ts-expect-error
+        Vue.render(vm, el.current)
 
-        return () => app.unmount()
+        // @ts-expect-error
+        return () =>  Vue.render(null, el.current)
       } else if (Vue.default) {
         const app = new Vue.default({
           // @ts-expect-error
