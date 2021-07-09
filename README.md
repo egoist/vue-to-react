@@ -68,6 +68,16 @@ toReact(VueComponent, {
 })
 ```
 
+## Demo
+
+Clone this repo first, then
+
+```bash
+yarn
+yarn build
+yarn demo
+```
+
 ## Contributing
 
 1. Fork it!
